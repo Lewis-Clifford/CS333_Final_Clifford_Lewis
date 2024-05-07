@@ -228,7 +228,7 @@ class TestCharacter(unittest.TestCase):
 		self.assertEqual(character.getSword().getDamage(), 5)
 		self.assertEqual(character.getSword().getParryBlock(), 2)
 		
-	
+	#
 
 if __name__ == '__main__':
 	unittest.main()
