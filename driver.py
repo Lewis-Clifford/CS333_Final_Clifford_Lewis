@@ -203,7 +203,7 @@ def fightMath(fighter, orc):
 	print("You take " + str(max(0, orcDamage - fighterBlock)) + " damage.\nThe orc takes " + str(max(0, fighterDamage - orcBlock)) + " damage.\n")
 	return fighter.getHealth(), orc.getHealth()
 
-#
+
 
 if __name__ == "__main__":
 	main()
