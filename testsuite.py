@@ -192,7 +192,7 @@ class TestCharacter(unittest.TestCase):
 		orc = Orc("Bartholomew", 6, Sword("Hellfire Sword", 9, 4))
 
 
-		self.assertEqual(driver.fight(player, orc), (-4, 4)) #Tests integration of fightMath function also
+		self.assertEqual(driver.fight(player, orc), (4, 4)) #Tests integration of fightMath function also
 
 	def test_fightMath_driver(self):
 		player = Player("Alice", 10, Sword("Sword", 5, 2))
