@@ -42,7 +42,7 @@ jobs:
     steps:
     - uses: actions/upload-artifact@v4
       with:
-        path: ~/artifact
+        path: D:\Documents\Class Notes Spring 2024\CS333\CS333_Final_Clifford_Lewis
     - name: upload artifact
       uses: actions/upload-artifact@v4
       with:
