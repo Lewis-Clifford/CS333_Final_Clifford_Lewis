@@ -44,7 +44,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: pytest-results-${{ matrix.python-version }}
-        path: junit/test-results-${{ matrix.python-version }}.xml
+        path: /home/runner/work/CS333_Final_Clifford_Lewis/CS333_Final_Clifford_Lewis/junit/test-results-.xml
 
 
         
