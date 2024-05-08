@@ -5,18 +5,3 @@
     - "refs/heads/main"
   fail_on_prepare_env_warning: true
   resources: "NANO"
-  actions:
-  - action: "Deploy"
-    type: "BUILD"
-    docker_image_name: "library/python"
-    docker_image_tag: "3.9"
-    execute_commands:
-    - ""
-    - "python driver.py"
-    cached_dirs:
-    - "/root/.cache/pip"
-    shell: "BASH"
-    trigger_conditions:
-    - trigger_condition: "SUCCESS_PIPELINE"
-      trigger_project_name: "cs333-final-clifford-lewis"
-      trigger_pipeline_name: "Build and Test"
