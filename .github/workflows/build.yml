@@ -36,6 +36,7 @@ jobs:
     - name: Test with testsuite
       run: |
         pytest testsuite.py --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
+        python testsuite.py
   upload:
     runs-on: ubuntu-latest
 
@@ -44,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: pytest-results-${{ matrix.python-version }}
-        path: /home/runner/work/CS333_Final_Clifford_Lewis/CS333_Final_Clifford_Lewis/junit/test-results-.xml
+        path: home/runner/work/CS333_Final_Clifford_Lewis/CS333_Final_Clifford_Lewis/junit/test-results-.xml
 
 
         
