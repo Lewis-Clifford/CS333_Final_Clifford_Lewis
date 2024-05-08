@@ -11,6 +11,6 @@
     docker_image_name: "library/ubuntu"
     docker_image_tag: "20.04"
     execute_commands:
-    - "python -m pip install --upgrade pip"
+    - "python3 -m pip install --upgrade pip"
     - "python driver.py"
     shell: "BASH"
