@@ -1,13 +1,12 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python application
+name: build
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+
 
 permissions:
   contents: read
@@ -37,3 +36,18 @@ jobs:
     - name: Test with testsuite
       run: |
         python3 testsuite.py
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/upload-artifact@v4
+    - name: upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: ~/artifact # or path/to/artifact
+        compression-level: 9
+        
+    
+    
+    
