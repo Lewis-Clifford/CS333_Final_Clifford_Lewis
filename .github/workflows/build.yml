@@ -35,21 +35,17 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with testsuite
       run: |
-        python3 testsuite.py
+        pytest testsuite.py --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
   upload:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/upload-artifact@v4
       with:
-        path: |
-            dist
-    - name: upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: my-artifact
-        path: $home/artifact # or path/to/artifact
-        compression-level: 9
+        name: pytest-results-${{ matrix.python-version }}
+        path: junit/test-results-${{ matrix.python-version }}.xml
+
+
         
     
     
