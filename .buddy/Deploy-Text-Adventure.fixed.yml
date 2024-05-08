@@ -14,7 +14,3 @@
     - "python -m pip install --upgrade pip"
     - "python driver.py"
     shell: "BASH"
-    trigger_conditions:
-    - trigger_condition: "SUCCESS_PIPELINE"
-      trigger_project_name: "cs333-final-clifford-lewis"
-      trigger_pipeline_name: "Build and Test"
