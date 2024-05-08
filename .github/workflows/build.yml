@@ -43,7 +43,9 @@ jobs:
       with:
         name: pytest-results-${{ matrix.python-version }}
         path: home/runner/work/CS333_Final_Clifford_Lewis/CS333_Final_Clifford_Lewis/junit/test-results-.xml
-
+    - name: Run
+      run: |
+        python driver.py
 
         
     
