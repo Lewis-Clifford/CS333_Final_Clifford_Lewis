@@ -136,7 +136,7 @@ def thirdChoice(choiceThree, fighter, sword1, sword2, shield):
 			choiceThree = input("1. Yes\n2. No\n")
 
 ############################################################################################################
-
+#
 def chooseSword(fighter, sword1, sword2):
 	valid = False
 
