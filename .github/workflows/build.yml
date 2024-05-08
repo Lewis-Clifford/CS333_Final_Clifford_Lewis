@@ -35,20 +35,18 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with testsuite
       run: |
-        python3 testsuite.py
-  upload:
-    runs-on: ubuntu-latest
+        pytest testsuite.py --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
+        python testsuite.py
 
-    steps:
-    - uses: actions/upload-artifact@v4
-      with:
-        path: D:\Documents\Class Notes Spring 2024\CS333\CS333_Final_Clifford_Lewis
-    - name: upload artifact
+    - name: Upload pytest test results
       uses: actions/upload-artifact@v4
       with:
-        name: my-artifact
-        path: $home/artifact # or path/to/artifact
-        compression-level: 9
+        name: pytest-results-${{ matrix.python-version }}
+        path: home/runner/work/CS333_Final_Clifford_Lewis/CS333_Final_Clifford_Lewis/junit/test-results-.xml
+    - name: Run
+      run: |
+        python driver.py
+
         
     
     
